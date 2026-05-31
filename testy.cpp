@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
-int main();
+int main()
 {
-cout<<"test, raz dwa trzy, wszystko działa?";
-return 0;
+	cout<<"test, raz dwa trzy, wszystko działa?";
+	return 0;
 }
