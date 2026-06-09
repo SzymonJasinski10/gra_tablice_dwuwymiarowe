@@ -1,4 +1,5 @@
 #include <iostream>
+#include <conio.h>
 using namespace std;
 int main(){
 
@@ -19,10 +20,21 @@ int plansza[10][10] = {
 {0,0,0,' ',0,' ',0,' ',0},
 {0,' ',' ',' ',0,' ',' ',' ',' ',0},
 {0,' ',0,' ',0,0,0,0,' ',0},
-{0,' ',0,' ',' ',' ',' ',0,' ',0},
-{0,5,0,0,0,0,5,0,5,0},
+{0,' ',0,' ',' ',' ',5,0,' ',0},
+{0,5,0,0,0,0,' ',0,5,0},
 {0,0,0,0,0,0,0,0,0,0},
 };
+
+int graczX=1;
+int graczY=1;
+
+int liczba_skarbow=0;
+int stanGry=0; //0-gramy, 1-wygrana, 2-przegrana 3-wyjscie z gry
+
+while(stanGry==0){
+
+
+
   for(int x=0;x<rozmiar;x++){
     for(int y=0;y<rozmiar;y++){
         if(plansza[x][y]==puste_pole){
@@ -32,15 +44,52 @@ int plansza[10][10] = {
             cout<<plansza[x][y]<<" ";
         }
     }
-        cout<<endl;
+       cout<<endl;
+  }
+  cout<<endl;
+  cout<<endl;
+
+  char klawisz=_getch();
+
+  int ruchowaX=graczX;
+  int ruchowaY=graczY;
+
+  if(klawisz=='x'){
+    stanGry=3;
   }
 
+  if(klawisz=='w')ruchowaX--;
+  if(klawisz=='s' )ruchowaX++;
+  if(klawisz=='a')ruchowaY--;
+  if(klawisz=='d')ruchowaY++;
 
+  if(plansza[ruchowaX][ruchowaY]==0){
+    stanGry=2;
+  }
+  else{
+    if(plansza[ruchowaX][ruchowaY]==5){
+        liczba_skarbow++;
+        if(liczba_skarbow==5){
+        stanGry=1;
+    }
+    }
+    plansza[graczX][graczY] = ' ';
+            graczX = ruchowaX;
+            graczY = ruchowaY;
+            plansza[graczX][graczY] = 1;
+  }
+  }
 
-
-
-
-
+if(stanGry==3)
+    return 0;
 
 
 }
+
+
+
+
+
+
+
+
