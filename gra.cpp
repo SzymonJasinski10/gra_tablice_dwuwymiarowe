@@ -33,13 +33,39 @@ int liczba_skarbow=0;
 int stanGry=0; //0-gramy, 1-wygrana, 2-przegrana 3-wyjscie z gry
 
 while(stanGry==0){
-
+if(liczba_skarbow==0){
+    cout<<"---------------------------------------------------------------"<<endl;
+cout<<"                    Gramy dalej..."<<endl;
+cout<<"                 Zebrane skarby: "<<liczba_skarbow<<"/5"<<endl;
+cout<<"Aby wygrac do zebrania zostalo ci jeszcze "<<5-liczba_skarbow<<" skarbów do zebrania"<<endl;
+cout<<"---------------------------------------------------------------"<<endl;
+cout<<endl;
+}
+else if(liczba_skarbow==1){
 cout<<"---------------------------------------------------------------"<<endl;
 cout<<"                    Gramy dalej..."<<endl;
 cout<<"                 Zebrane skarby: "<<liczba_skarbow<<"/5"<<endl;
-cout<<"Aby wygrac do zebrania zostalo ci jeszcze "<<5-liczba_skarbow<<" skarbow do zebrania"<<endl;
+cout<<"Aby wygrac do zebrania zostalo ci jeszcze "<<5-liczba_skarbow<<" skarby do zebrania"<<endl;
 cout<<"---------------------------------------------------------------"<<endl;
 cout<<endl;
+}
+else if(liczba_skarbow==2 || liczba_skarbow==3){
+    cout<<"---------------------------------------------------------------"<<endl;
+cout<<"                    Gramy dalej..."<<endl;
+cout<<"                 Zebrane skarby: "<<liczba_skarbow<<"/5"<<endl;
+cout<<"Aby wygrac do zebrania zostalo ci jeszcze "<<5-liczba_skarbow<<" skarby do zebrania"<<endl;
+cout<<"---------------------------------------------------------------"<<endl;
+cout<<endl;
+}
+else if(liczba_skarbow==4){
+     cout<<"---------------------------------------------------------------"<<endl;
+cout<<"                    Gramy dalej..."<<endl;
+cout<<"                 Zebrane skarby: "<<liczba_skarbow<<"/5"<<endl;
+cout<<"Aby wygrac do zebrania zostalo ci jeszcze "<<5-liczba_skarbow<<" skarb do zebrania"<<endl;
+cout<<"---------------------------------------------------------------"<<endl;
+cout<<endl;
+}
+
 
   for(int x=0;x<rozmiar;x++){
     for(int y=0;y<rozmiar;y++){
@@ -52,8 +78,31 @@ cout<<endl;
     }
        cout<<endl;
   }
+  if(stanGry==0){
   cout<<endl;
   cout<<endl;
+  cout<<endl;
+  cout<<endl;
+  cout<<endl;
+  cout<<endl;
+  cout<<endl;
+  }
+  else{
+   cout<<endl;
+  cout<<endl;
+  cout<<endl;
+  cout<<endl;
+  cout<<endl;
+  cout<<endl;
+  cout<<endl;
+  cout<<endl;
+  cout<<endl;
+  cout<<endl;
+  cout<<endl;
+  cout<<endl;
+  cout<<endl;
+  cout<<endl;
+  }
 
   char klawisz=_getch();
 
@@ -79,7 +128,7 @@ cout<<endl;
         stanGry=1;
 
     }
-    if(liczba_skarbow<maks_skarbow){
+    if(liczba_skarbow<maks_skarbow-1){
         cout<<"<<<<<<<<<<<<<< Wow, gratulacje znalazles skarb >>>>>>>>>>>>>>"<<endl;
     }
 
